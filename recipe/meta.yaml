@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://github.com/charman2/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: f47ff2872f7baeb8ca851682c713022b239fe4cf7103a334ad318c6cb34712f5
+  sha256: 6463e64dac9eb2af362ecb64c30cdffe0165ff67f653157a9b90358c558785df
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
   skip: True  # [py<36]
 
