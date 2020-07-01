@@ -12,8 +12,8 @@ source:
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
-  skip: True  # [py<36]
+  script: {{ PYTHON }} -m pip install . -vv
+  skip: true  # [py<36]
 
 requirements:
   build:
@@ -38,7 +38,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  summary: 'multiresolution estimation of storage selection'
+  summary: multiresolution estimation of storage selection
 
   description: |
     mesas is a suite of tools for analyzing tracer data and modeling solute
@@ -50,4 +50,4 @@ about:
 extra:
   recipe-maintainers:
     - charman2
- 
+
