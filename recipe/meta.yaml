@@ -1,5 +1,5 @@
 {% set name = "mesas" %}
-{% set version = "0.2020.0701" %}
+{% set version = "0.2020.0805" %}
 
 
 package:
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://github.com/charman2/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 0b7dce9246f9d28757e1c3c5b0c2b05c657ed70e079f77aa43aad24e87f6b377
+  sha256: 97ce139d2180ad9415dc6debfe16946483365bf1151095bd3dba7abb51da1f03
 
 build:
-  number: 1
-  script: "{{ PYTHON }} -m pip install . -vv"
-  skip: True  # [py<36]
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
+  skip: true  # [py<36]
 
 requirements:
   build:
@@ -38,7 +38,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  summary: 'multiresolution estimation of storage selection'
+  summary: multiresolution estimation of storage selection
 
   description: |
     mesas is a suite of tools for analyzing tracer data and modeling solute
@@ -50,4 +50,4 @@ about:
 extra:
   recipe-maintainers:
     - charman2
- 
+
