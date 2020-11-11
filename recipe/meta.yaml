@@ -11,7 +11,7 @@ source:
   sha256: 97ce139d2180ad9415dc6debfe16946483365bf1151095bd3dba7abb51da1f03
 
 build:
-  number: 1
+  number: 2
   script:
     - export LDFLAGS="$LDFLAGS -v"    # [osx]
     - "{{ PYTHON }} -m pip install . -vv"
