@@ -34,7 +34,11 @@ requirements:
 test:
   imports:
     - mesas
-
+  requires:
+    - pytest
+  commands:
+    - pytest --pyargs mesas
+    
 about:
   home: http://github.com/charman2/mesas
   license: MIT
