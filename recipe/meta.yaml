@@ -1,5 +1,5 @@
 {% set name = "mesas" %}
-{% set version = "0.2021.0811" %}
+{% set version = "0.2021.0813" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/charman2/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: fbdc1e633336c8da5c6896cfc0d1454a73ff6bb51bc97806e89b5d8192fd6162
+  sha256: 1675784be0b12f36bb2d60c509ae9ca1e556c742741a924443f8a7dec5d9f906
 
 build:
   number: 1
@@ -23,7 +23,7 @@ requirements:
   host:
     - python
     - pip
-    - numpy 1.18.*
+    - numpy 1.21.*
   run:
     - python
     - {{ pin_compatible('numpy') }}
