@@ -15,7 +15,7 @@ build:
   script:
     - export LDFLAGS="$LDFLAGS -v"    # [osx]
     - "{{ PYTHON }} -m pip install . -vv"
-  skip: [py<37]
+  skip: True  # [py<37]
 
 requirements:
   build:
