@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://github.com/charman2/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  sha256: 966603b6838f9d7f3b1307766e55e94af07f1b57c01aac55dde5551b04aacf2b
 
 build:
-  number: 1
+  number: 2
   script:
     - export LDFLAGS="$LDFLAGS -v"    # [osx]
     - "{{ PYTHON }} -m pip install . -vv"
