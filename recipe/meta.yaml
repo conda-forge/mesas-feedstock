@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/charman2/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 5bbff0311aa49e7f6506d117fc8c4751243d3dded64ab8a6d260b03e2006e998
+  sha256: b53c3c8975e40e614072dabd6cefd6010d60be07da32fd7fa050c8f380ed90cf
 
 build:
   number: 1
