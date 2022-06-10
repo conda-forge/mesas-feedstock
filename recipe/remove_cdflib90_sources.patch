@@ -1,0 +1,15 @@
+diff --git a/setup.py b/setup.py
+index 49376a9..7f8197e 100644
+--- a/setup.py
++++ b/setup.py
+@@ -43,8 +43,8 @@ config = {
+                     },
+     'scripts': [],
+     'name': 'mesas',
+-    'ext_modules': [Extension(name='solve', sources=[add_mod_dir, util.convert_path('mesas/sas/solve.f90')],
+-                              include_dirs=[numpy.get_include()],
++    'ext_modules': [Extension(name='solve', sources=[util.convert_path('mesas/sas/solve.f90')],
++                              include_dirs=[numpy.get_include(), "mesas/sas/cdflib90"],
+                               extra_f90_compile_args=["-Ofast", '-fno-stack-arrays'],
+                               libraries=reversed(cdflibnames))],
+ }
