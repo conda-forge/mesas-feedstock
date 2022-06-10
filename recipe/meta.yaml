@@ -11,6 +11,7 @@ source:
   sha256: cb41b8595f3cc7fa58015fc6c6d2abb910dcc2c34895863fd2c5f09ac7075b4e
   patches:
     - remove_cdflib90_sources.patch
+    - use-compilers-from-environment.patch
 
 build:
   number: 0
