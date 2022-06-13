@@ -14,14 +14,16 @@ source:
 
 build:
   number: 0
-  skip: true  # [py<37 or unix]
+  skip: true  # [win and vc<14]
+
 
 requirements:
   build:
-    - {{ compiler('fortran') }}
-  host:
-    - make  # [unix]
     - cmake
+    - {{ compiler('fortran') }}
+    - {{ compiler('cxx') }}  # [win]
+    - make  # [unix]
+  host:
     - python
     - setuptools
     - pip
