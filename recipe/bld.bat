@@ -9,7 +9,14 @@ cmake ^
   -DCMAKE_Fortran_COMPILER=%FORTRAN_COMPILER% ^
   -S %SRC_DIR%/mesas/sas/cdflib90/ ^
   -B %SRC_DIR%/mesas/sas/cdflib90/_build
+if errorlevel 1 exit /b 1
 
-cmake --build %SRC_DIR%/mesas/sas/cdflib90/_build --config Release
+cd %SRC_DIR%\mesas\sas\cdflib90\_build
+nmake
+if errorlevel 1 exit /b 1
+
+cd %SRC_DIR%
+:: cmake --build %SRC_DIR%/mesas/sas/cdflib90/_build --config Release
 
 %PYTHON% -m pip install . -vv
+if errorlevel 1 exit /b 1
