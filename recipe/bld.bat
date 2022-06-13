@@ -1,6 +1,6 @@
-CP %RECIPE_DIR%\CMakeLists.txt %SRC_DIR%\mesas\sas\cdflib90
+copy %RECIPE_DIR%\CMakeLists.txt %SRC_DIR%\mesas\sas\cdflib90
 
-mkdir mesas/sas/cdflib90/_build
+mkdir mesas\sas\cdflib90\_build
 cmake ^
   -G "%CMAKE_GENERATOR%" ^
   -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
