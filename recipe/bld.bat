@@ -6,6 +6,7 @@ cmake ^
   -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
   -DCMAKE_PREFIX_PATH:PATH="%LIBRARY_PREFIX%" ^
   -DCMAKE_BUILD_TYPE:STRING=Release ^
+  -DCMAKE_Fortran_COMPILER=%FORTRAN_COMPILER% ^
   -S %SRC_DIR%/mesas/sas/cdflib90/ ^
   -B %SRC_DIR%/mesas/sas/cdflib90/_build
 
