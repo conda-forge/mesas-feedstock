@@ -18,10 +18,10 @@ build:
 
 requirements:
   build:
-    - make  # [unix]
-    - cmake
     - {{ compiler('fortran') }}
   host:
+    - make  # [unix]
+    - cmake
     - python
     - setuptools
     - pip
