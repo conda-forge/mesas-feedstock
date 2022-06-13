@@ -21,7 +21,7 @@ requirements:
   build:
     - cmake
     - {{ compiler('fortran') }}
-    - {{ compiler('cxx') }}  # [win]
+    - {{ compiler('cxx') }}
     - make  # [unix]
   host:
     - python
