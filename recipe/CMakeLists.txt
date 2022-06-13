@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(cdflib90 Fortran)
+project(mesas)
+enable_language(Fortran)
 set(CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/mod)
 include_directories(${CMAKE_Fortran_MODULE_DIRECTORY})
 
