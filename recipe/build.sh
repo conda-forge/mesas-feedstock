@@ -1,3 +1,5 @@
+cp ${RECIPE_DIR}/CMakeLists.txt ${SRC_DIR}/mesas/sas/cdflib90
+
 mkdir -p ${SRC_DIR}/mesas/sas/cdflib90/_build
 
 cmake -S ${SRC_DIR}/mesas/sas/cdflib90 -B ${SRC_DIR}/mesas/sas/cdflib90/_build
