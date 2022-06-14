@@ -27,3 +27,32 @@ add_library(cdf_poisson_mod STATIC biomath_constants_mod.f90 cdf_aux_mod.f90 cdf
 add_library(cdf_t_mod STATIC biomath_constants_mod.f90 biomath_mathlib_mod.f90 cdf_aux_mod.f90 cdf_beta_mod.f90 cdf_normal_mod.f90 zero_finder.f90)
 add_library(zero_finder STATIC biomath_constants_mod.f90)
 
+install(
+  TARGETS
+    biomath_constants_mod
+    biomath_sort_mode
+    biomath_interface_mod
+    biomath_mathlib_mod
+    biomath_sort_mod
+    biomath_strings_mod
+    cdf_aux_mod
+    cdf_beta_mod
+    cdf_binomial_mod
+    cdf_chisq_mod
+    cdf_f_mod
+    cdf_gamma_mod
+    cdf_nc_chisq_mod
+    cdf_nc_f_mod
+    cdf_nc_t_mod
+    cdf_neg_binomial_mod
+    cdf_normal_mod
+    cdf_poisson_mod
+    cdf_t_mod
+    zero_finder
+  LIBRARY DESTINATION lib
+  ARCHIVE DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+
+file(GLOB MOD_FILES ${CMAKE_Fortran_MODULE_DIRECTORY}/*.mod)
+install(FILES ${MOD_FILES} DESTINATION include)
