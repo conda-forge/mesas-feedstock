@@ -13,9 +13,6 @@ cmake ^
   ..
 if errorlevel 1 exit /b 1
 
-::  -S %SRC_DIR%/mesas/sas/cdflib90/ ^
-::  -B %SRC_DIR%/mesas/sas/cdflib90/_build
-
 cmake --build . --target install --config Release
 if errorlevel 1 exit /b 1
 
