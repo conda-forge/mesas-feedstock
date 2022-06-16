@@ -1,20 +1,25 @@
 diff --git a/setup.py b/setup.py
-index 49376a9..0923274 100644
+index 49376a9..aa4c6dd 100644
 --- a/setup.py
 +++ b/setup.py
-@@ -43,18 +43,20 @@ config = {
+@@ -43,18 +43,24 @@ config = {
                      },
      'scripts': [],
      'name': 'mesas',
 -    'ext_modules': [Extension(name='solve', sources=[add_mod_dir, util.convert_path('mesas/sas/solve.f90')],
 -                              include_dirs=[numpy.get_include()],
-+    'ext_modules': [Extension(name='solve', sources=[util.convert_path('mesas/sas/solve.f90')],
-+                              include_dirs=[numpy.get_include(), "mesas/sas/cdflib90/_build/mod"],
-+                              library_dirs=["mesas/sas/cdflib90/_build/mod", "mesas/sas/cdflib90/_build"],
-                               extra_f90_compile_args=["-Ofast", '-fno-stack-arrays'],
+-                              extra_f90_compile_args=["-Ofast", '-fno-stack-arrays'],
 -                              libraries=reversed(cdflibnames))],
-+                              libraries=["cdf_beta_mod", "cdf_gamma_mod"],
-+                             )],
++    'ext_modules': [
++        Extension(
++            name='solve',
++            sources=[util.convert_path('mesas/sas/solve.f90')],
++            include_dirs=[numpy.get_include(), "mesas/sas/cdflib90/_build/mod"],
++            library_dirs=["mesas/sas/cdflib90/_build/mod", "mesas/sas/cdflib90/_build"],
++            extra_f90_compile_args=["-Ofast", '-fno-stack-arrays'],
++            libraries=[p.stem for p in Path("mesas/sas/cdflib90").glob("*_mod.f90")],
++        )
++    ],
  }
  
 -config['libraries'] = []
