@@ -16,13 +16,11 @@ build:
   number: 0
   skip: true  # [win and vc<14]
 
-
 requirements:
   build:
     - cmake
     - {{ compiler('fortran') }}
     - {{ compiler('cxx') }}
-    - make  # [unix]
   host:
     - python
     - setuptools
@@ -38,6 +36,7 @@ requirements:
 test:
   imports:
     - mesas
+    - mesas.sas.solve
 
 about:
   home: http://github.com/charman2/mesas
