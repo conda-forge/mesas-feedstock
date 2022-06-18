@@ -14,7 +14,7 @@ source:
     - relative_import_of_solve_ext.patch  # import solve as .solve
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
 
 requirements:
