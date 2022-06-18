@@ -1,7 +1,11 @@
+CMAKE_GENERATOR:
+- NMake Makefiles
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
+cxx_compiler:
+- vs2017
 fortran_compiler:
 - flang
 fortran_compiler_version:
@@ -14,3 +18,5 @@ python:
 - 3.8.* *_cpython
 target_platform:
 - win-64
+vc:
+- '14'

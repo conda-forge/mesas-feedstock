@@ -1,0 +1,13 @@
+diff --git a/mesas/sas/model.py b/mesas/sas/model.py
+index 3443d0e..ca09bb7 100644
+--- a/mesas/sas/model.py
++++ b/mesas/sas/model.py
+@@ -12,7 +12,7 @@ import pandas as pd
+ import json
+ 
+ import numpy as np
+-from solve import solvesas as solve
++from .solve import solvesas as solve
+ 
+ dtype = np.float64
+ 
