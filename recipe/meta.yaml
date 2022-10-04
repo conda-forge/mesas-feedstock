@@ -1,5 +1,5 @@
 {% set name = "mesas" %}
-{% set version = "0.2022.0421" %}
+{% set version = "1.20221004" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/charman2/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: cb41b8595f3cc7fa58015fc6c6d2abb910dcc2c34895863fd2c5f09ac7075b4e
+  sha256: f427499d41ed39f6b7a3a800da628ee89a26ce673a790576d754dc19bb7488aa
   patches:
     - remove_cdflib90_sources.patch  # don't build cdflib90 files with extension
     - relative_import_of_solve_ext.patch  # import solve as .solve
