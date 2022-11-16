@@ -9,9 +9,6 @@ package:
 source:
   url: https://github.com/charman2/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: d2d79ab5cd1c0197080c4acc36138a2fdf8101ba2c453dcc992b21228513053d
-  patches:
-    - remove_cdflib90_sources.patch  # don't build cdflib90 files with extension
-    - relative_import_of_solve_ext.patch  # import solve as .solve
 
 build:
   number: 0
