@@ -21,12 +21,12 @@ requirements:
     - {{ compiler('fortran') }}
     - {{ compiler('cxx') }}
   host:
-    - python
+    - python >=3.8
     - setuptools
     - pip
     - numpy 1.21.*
   run:
-    - python
+    - python >=3.8
     - pandas
     - {{ pin_compatible('numpy') }}
     - scipy
