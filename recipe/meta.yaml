@@ -27,7 +27,7 @@ requirements:
     - pip
     - numpy 1.22.*
   run:
-    - python >=3.8
+    - python
     - pandas
     - {{ pin_compatible('numpy') }}
     - scipy
