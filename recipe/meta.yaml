@@ -1,5 +1,5 @@
 {% set name = "mesas" %}
-{% set version = "1.20230417" %}
+{% set version = "1.20230420" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/charman2/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 1db5b64e44e3d89e98a0915e72bb15db48c88cdb3cfe980f434a2c86156050cd
+  sha256: ae798e9a5b37272bca253e1f34e11bcd20477fb2b7c97f9d3b4c4ecb40b067e1
 
 build:
   number: 0
