@@ -1,0 +1,2 @@
+fortran_compiler_version:      # [win64]
+  - 11                         # [win64]
