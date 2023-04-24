@@ -25,7 +25,7 @@ requirements:
     - python
     - setuptools
     - pip
-    - numpy 1.22.*
+    - numpy
   run:
     - python
     - pandas
