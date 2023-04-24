@@ -7,7 +7,7 @@ include_directories(${CMAKE_Fortran_MODULE_DIRECTORY})
 
 
 add_library(biomath_constants_mod STATIC biomath_constants_mod.f90)
-add_library(biomath_sort_mode STATIC biomath_sort_mod.f90)
+add_library(biomath_sort_mod STATIC biomath_sort_mod.f90)
 add_library(biomath_interface_mod STATIC biomath_interface_mod.f90 biomath_constants_mod.f90 biomath_sort_mod.f90 biomath_strings_mod.f90)
 add_library(biomath_mathlib_mod STATIC biomath_mathlib_mod.f90 biomath_constants_mod.f90)
 add_library(biomath_sort_mod STATIC biomath_sort_mod.f90 biomath_constants_mod.f90)
@@ -30,7 +30,7 @@ add_library(zero_finder STATIC biomath_constants_mod.f90)
 install(
   TARGETS
     biomath_constants_mod
-    biomath_sort_mode
+    biomath_sort_mod
     biomath_interface_mod
     biomath_mathlib_mod
     biomath_sort_mod
