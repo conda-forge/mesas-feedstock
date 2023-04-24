@@ -5,7 +5,7 @@ cd %SRC_DIR%\mesas\sas\cdflib90\_build
 
 cmake ^
   -LAH ^
-  -G "%CMAKE_GENERATOR%" ^
+  -G "NMake Makefiles" ^
   -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
   -DCMAKE_PREFIX_PATH:PATH="%LIBRARY_PREFIX%" ^
   -DCMAKE_BUILD_TYPE:STRING=Release ^
