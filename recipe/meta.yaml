@@ -11,7 +11,7 @@ source:
   sha256: 70c965ccaf694672037cb84089191462759cda387601262e053e2af68c3f7567
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
   skip: True  # [py==37]
 
@@ -19,7 +19,7 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - numpy 1.22.*                           # [build_platform != target_platform]
+    - numpy 1.24.*                           # [build_platform != target_platform]
     - cmake
     - make  # [unix]
     - {{ compiler('fortran') }}
@@ -28,7 +28,7 @@ requirements:
     - python
     - setuptools
     - pip
-    - numpy 1.22.*
+    - numpy 1.24.*
   run:
     - python
     - pandas
