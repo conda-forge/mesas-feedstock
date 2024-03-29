@@ -21,9 +21,8 @@ requirements:
     - numpy 1.24.*                           # [build_platform != target_platform]
     - cmake
     - make  # [unix]
+    - {{ compiler('m2w64-toolchain') }}  # [win]
     - {{ compiler('fortran') }}
-    - {{ compiler('m2w64_c') }}  # [win]
-    - {{ compiler('m2w64_fortran') }}  # [win]
     - {{ compiler('cxx') }}
   host:
     - python
