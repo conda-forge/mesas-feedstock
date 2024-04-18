@@ -1,5 +1,5 @@
 {% set name = "mesas" %}
-{% set version = "1.20230728" %}
+{% set version = "1.20240418" %}
 
 
 package:
@@ -8,12 +8,11 @@ package:
 
 source:
   url: https://github.com/charman2/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: f5d63f74d738101553ca347c387ad73cf2fc344099e0175d1587fd74ff028649
+  sha256: 89457f747693a0fdd6c285401af274a2356aab69b3efaa54558d6d92a1cf4ee1
 
 build:
   number: 1
-  skip: true  # [win and vc<14]
-  skip: True  # [py==37]
+  skip: true  # [py==37]
 
 requirements:
   build:
@@ -22,6 +21,7 @@ requirements:
     - numpy 1.24.*                           # [build_platform != target_platform]
     - cmake
     - make  # [unix]
+    - {{ compiler('m2w64-toolchain') }}  # [win]
     - {{ compiler('fortran') }}
     - {{ compiler('cxx') }}
   host:
