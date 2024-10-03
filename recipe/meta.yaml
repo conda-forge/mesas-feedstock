@@ -32,6 +32,7 @@ requirements:
     - pip
     - meson-python >=0.13
     - numpy
+    - setuptools
   run:
     - python
     - pandas
