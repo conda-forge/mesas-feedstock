@@ -18,7 +18,7 @@ requirements:
     {% if build_platform != target_platform %}
     - python
     - cross-python_{{ target_platform }}
-    - numpy 1.24.*
+    - numpy
     {% endif %}
     - cmake
     - make  # [unix]
@@ -31,7 +31,7 @@ requirements:
     - python
     - pip
     - meson-python >=0.13
-    - numpy 1.24.*
+    - numpy
   run:
     - python
     - pandas
