@@ -26,7 +26,8 @@ requirements:
     - {{ compiler('m2w64-toolchain') }}  # [win]
     - {{ compiler('fortran') }}
     - {{ compiler('cxx') }}
-    - {{ stdlib("c") }}
+    - {{ compiler('c') }}
+    - {{ stdlib('c') }}
     - meson =1.3.2
   host:
     - python
