@@ -29,10 +29,10 @@ requirements:
     - {{ stdlib('c') }}
   host:
     - python
+    - setuptools
     - pip
     - meson-python >=0.13
     - numpy
-    - setuptools
   run:
     - python
     - pandas
