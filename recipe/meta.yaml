@@ -12,7 +12,13 @@ source:
 
 build:
   number: 0
-
+  script:
+    - mkdir builddir
+    - {{ PYTHON }} -m mesonbuild.mesonmain setup $MESON_ARGS builddir   # [unix]
+    - {{ PYTHON }} -m mesonbuild.mesonmain setup %MESON_ARGS% builddir  # [win]
+    - {{ PYTHON }} -m build --wheel --no-isolation --skip-dependency-check -Cbuilddir=builddir
+    - {{ PYTHON }} -m pip install --find-links mesas
+    
 requirements:
   build:
     {% if build_platform != target_platform %}
@@ -32,6 +38,7 @@ requirements:
     - pip
     - meson-python >=0.13
     - numpy
+    - python-build
   run:
     - python
     - pandas
