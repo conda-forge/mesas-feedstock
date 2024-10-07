@@ -15,11 +15,8 @@ build:
     
 requirements:
   build:
-    {% if build_platform != target_platform %}
     - python
-    - cross-python_{{ target_platform }}
     - numpy
-    {% endif %}
     - cmake
     - make  # [unix]
     - {{ compiler('m2w64-toolchain') }}  # [win]
