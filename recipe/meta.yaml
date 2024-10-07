@@ -38,6 +38,7 @@ requirements:
 test:
   imports:
     - mesas
+    - mesas_solve
     - mesas.sas.solve
 
 about:
