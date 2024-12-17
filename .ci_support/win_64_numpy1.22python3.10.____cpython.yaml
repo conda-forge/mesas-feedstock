@@ -9,12 +9,17 @@ cxx_compiler:
 fortran_compiler:
 - flang
 fortran_compiler_version:
-- '11'
+- '19'
+numpy:
+- '1.22'
 pin_run_as_build:
   python:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.8.* *_cpython
+- 3.10.* *_cpython
 target_platform:
 - win-64
+zip_keys:
+- - python
+  - numpy
