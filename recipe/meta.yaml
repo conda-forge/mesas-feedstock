@@ -11,7 +11,7 @@ source:
   sha256: 89457f747693a0fdd6c285401af274a2356aab69b3efaa54558d6d92a1cf4ee1
 
 build:
-  number: 1
+  number: 2
   skip: true  # [py==37]
 
 requirements:
@@ -24,6 +24,7 @@ requirements:
     - {{ compiler('m2w64-toolchain') }}  # [win]
     - {{ compiler('fortran') }}
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - setuptools
@@ -32,7 +33,6 @@ requirements:
   run:
     - python
     - pandas
-    - {{ pin_compatible('numpy') }}
     - scipy
     - matplotlib-base
 
