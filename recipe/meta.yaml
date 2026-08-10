@@ -1,48 +1,45 @@
 {% set name = "mesas" %}
-{% set version = "1.20240418" %}
-
+{% set version = "2.0.0a1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/charman2/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 89457f747693a0fdd6c285401af274a2356aab69b3efaa54558d6d92a1cf4ee1
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 4d19130397e8fa16532fae7dcd411297d085aa7c11aeb3e89d84988cfde12c98
 
 build:
-  number: 1
-  skip: true  # [py==37]
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
-  build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - numpy 1.24.*                           # [build_platform != target_platform]
-    - cmake
-    - make  # [unix]
-    - {{ compiler('m2w64-toolchain') }}  # [win]
-    - {{ compiler('fortran') }}
-    - {{ compiler('cxx') }}
   host:
-    - python
-    - setuptools
+    - python {{ python_min }}.*
+    - hatchling >=1.21
     - pip
-    - numpy 1.24.*
   run:
-    - python
+    - python >={{ python_min }}
     - pandas
-    - {{ pin_compatible('numpy') }}
+    - numpy >1.22
+    - numba
     - scipy
     - matplotlib-base
 
 test:
+  requires:
+    - python {{ python_min }}.*
+    - pip
   imports:
     - mesas
-    - mesas.sas.solve
+    - mesas.sas.model
+    - mesas.sas._solve_numba
+  commands:
+    - pip check
 
 about:
-  home: http://github.com/charman2/mesas
+  home: https://github.com/charman2/mesas
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
@@ -50,9 +47,12 @@ about:
 
   description: |
     mesas is a suite of tools for analyzing tracer data and modeling solute
-    transport in time-variable input-output flow systems. It is written in python wrapping
-    a fortran extension where the serious number-crunching happens
-  doc_url: http://mesas.readthedocs.io/
+    transport in time-variable input-output flow systems using StorAge
+    Selection (SAS) functions. As of v2 it is written in pure Python; the
+    numerical solver is JIT-compiled with Numba (no Fortran compiler
+    required). Pre-release builds are published to the mesas_dev label:
+    conda install -c conda-forge/label/mesas_dev -c conda-forge mesas
+  doc_url: https://mesas.readthedocs.io/
   dev_url: https://github.com/charman2/mesas
 
 extra:
