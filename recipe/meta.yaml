@@ -1,5 +1,5 @@
 {% set name = "mesas" %}
-{% set version = "2.0.0a1" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4d19130397e8fa16532fae7dcd411297d085aa7c11aeb3e89d84988cfde12c98
+  sha256: e5e7155786bc5ebe5bdd9b884188f05e806b71ec4a56a941cbfbd06ef9b7dc95
 
 build:
   noarch: python
@@ -39,7 +39,7 @@ test:
     - pip check
 
 about:
-  home: https://github.com/charman2/mesas
+  home: https://github.com/JH-LandHydroLab/mesas
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
@@ -50,10 +50,9 @@ about:
     transport in time-variable input-output flow systems using StorAge
     Selection (SAS) functions. As of v2 it is written in pure Python; the
     numerical solver is JIT-compiled with Numba (no Fortran compiler
-    required). Pre-release builds are published to the mesas_dev label:
-    conda install -c conda-forge/label/mesas_dev -c conda-forge mesas
+    required).
   doc_url: https://mesas.readthedocs.io/
-  dev_url: https://github.com/charman2/mesas
+  dev_url: https://github.com/JH-LandHydroLab/mesas
 
 extra:
   recipe-maintainers:
