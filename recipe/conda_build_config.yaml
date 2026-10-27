@@ -1,0 +1,4 @@
+# mesas is pure Python and supports 3.10 (matching the PyPI package);
+# override the global python_min, which has moved to 3.11.
+python_min:
+  - "3.10"

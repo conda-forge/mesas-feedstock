@@ -1,5 +1,5 @@
 {% set name = "mesas" %}
-{% set version = "2.0.1" %}
+{% set version = "2.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fb2cc7054f211348f65304e09eb83f76e2d25e6de1c0b29d3c0e7a208ee2f9dc
+  sha256: 68a06e68ca7860598d216e33e8d6e37ba8b0f53ad1ddbef5824de700fdc2f256
 
 build:
   noarch: python
